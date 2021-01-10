@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> Homepage</title>
+  <link rel="stylesheet" href="Home.css">
+  <link href="font/font.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="flipclock.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="flipclock.js"></script>
+  <link rel="shortcut icon" href="picture/football4u-transparent.ico" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+
+    .column {
+      float: left;
+      width: 50%;
+
+
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .contain {
+
+      text-align: center;
+      color: white;
+      background-color: #ffffff00;
+    }
+
+    .centered {
+      position: absolute;
+      top: 75%;
+      left: 10%;
+      transform: translate(-150%, -150%);
+      background-color: transparent;
+      font-weight: 700;
+      font-size: 20px;
+      color: white;
+    }
+
+    .myButton {
+      box-shadow: inset 0px 1px 3px 0px #276873;
+      background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+      background-color: #599bb3;
+      border-radius: 5px;
+      border: 1px solid #29668f;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 11px 23px;
+      text-decoration: none;
+      text-shadow: 0px -1px 0px #3d768a;
+      margin-top: 10px;
+    }
+
+    .myButton:hover {
+      background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+      background-color: #408c99;
+    }
+
+    .myButton:active {
+      position: relative;
+      top: 1px;
+    }
+  </style>
+</head>
+
+<body class="" style="background:#FFFFFF;">
+  <div class="navbar" id="navbar">
+    <img id="logo" src="picture/football4u-transparent.png" ALIGN=”left” alt="tournment-logo" style="height:50px">
+    <a href="Home.html">Home</a>
+    <a href="registration.html">Registration</a>
+    <a href="Information.html">Information</a>
+    <a href="Sponsors.html">Sponsors</a>
+    <a href="About_us.html">About us</a>
+  </div>
+
+  <div class="contain">
+    <img src="picture/Home_d.jpg" alt="" style="width: 100%; height: 400px;">
+    </div>
+  </div>
+  <center>
+    <div class="conatiner_full program_details_bg">
+      <div class="container" style="background-color: #29668f;">
+        <section class="program_details">
+          <h1 style="font-size: 50px;
+            color: #000000;
+            text-align: center;
+            padding-top: 20px;">Count Every Second Until the Event</h1>
+
+          <div class="" style="margin-left: 317px; padding-top:5px;">
+            <div class="message"></div>
+            <div class="clock" style="margin-left: 150px;
+              padding-bottom: 20px;
+              padding-top: 20px;"></div>
+          </div>
+        </section>
+
+
+
+
+      </div>
+    </div>
+  </center>
+  <div class="row">
+    <div class="column">
+      <img src="picture/trophy.jpg" alt="" style="width:100%;">
+    </div>
+    <div class="column" style="background-color:rgb(0, 0, 0); height: 270px; color: #FFFFFF;">
+      <center>
+        <h1 style="padding: 10px; padding-top: 30px; ">PRIZES</h1>
+        <p style="font-size: 24px; font-weight: 700;">Winning team will have RM 500 with medal
+          and trophies. The winner will have the BIG chance to meet Safawi Rasiki. Not only all the teams will have chances to win many atracting Prizes.
+           To grab this chance and register right now.</p>
+        <a href="prize.html" class="myButton">MORE INFO</a>
+      </center>
+    </div>
+  </div>
+
+  <div style="background-color: #e7eef3; ">
+    <center>
+      <h1 style="padding-top: 20px;">FOLLOW US ON</h1>
+      <a href="https://www.facebook.com/Football4U-102859015114120/" style=""><img src="picture/facebook.ico"></a>
+      <a href="https://www.instagram.com/officialfootball4u/" style=""><img src="picture/insta.ico"></a>
+      <a href="https://twitter.com/Football4u12" style=""><img src="picture/twitter.ico"></a>
+      <a href="https://www.youtube.com/channel/UCE0QFuvOFUNtWc375nguibg/about" style=""><img src="picture/youtube-3-64.ico"></a>
+
+    </center>
+  </div>
+  <!-- Footer -->
+  <footer style="padding: 20px; background-color: #000000; color: #ffffff;">
+    <center>
+      <p>@Copyrights 2020, All rights reserved</p>
+    </center>
+  </footer>
+
+
+  <script type="text/javascript">
+    var clock;
+
+    $(document).ready(function() {
+      var clock;
+
+      clock = $('.clock').FlipClock({
+        clockFace: 'DailyCounter',
+        autoStart: false,
+        callbacks: {
+          stop: function() {
+            $('.message').html('The clock has stopped!')
+          }
+        }
+      });
+
+      clock.setTime(2592000);
+      clock.setCountdown(true);
+      clock.start();
+
+    });
+  </script>
+</body>
+
+</html>

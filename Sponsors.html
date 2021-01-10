@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sponsor.css">
+</head>
+<link rel="shortcut icon" href="picture/football4u-transparent.ico" />
+<div class="navbar" id="navbar">
+  <img id="logo" src="picture/football4u-transparent.png" ALIGN=”left” alt="tournment-logo" style="height:50px">
+  <a href="Home.html">Home</a>
+  <a href="registration.html">Registration</a>
+  <a href="Information.html">Information</a>
+  <a href="Sponsors.html">Sponsors</a>
+  <a href="About_us.html">About us</a>
+</div>
+<link rel="stylesheet" href="style.css">
+<div class="header-img"></div>
+<div class="title">
+  <p style="color:white">OUR SPONSORS</p>
+</div>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="picture/sponsor_1.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="picture/sponsor_2.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="picture/sponsor_3.png" style="width:100%">
+    <script type="text/javascript">
+      var slideIndex = 0;
+      showSlides();
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 2 seconds
+      }
+      window.onscroll = function() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          document.getElementById("navbar").style.padding = "10px 10px";
+        } else {
+          document.getElementById("navbar").style.padding = "15px 10px";
+        }
+      };
+    </script>
+    </body>
+</html>

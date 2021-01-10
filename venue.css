@@ -1,0 +1,171 @@
+.h1{
+text-align: center;
+
+}
+.h2{
+text-align: center;
+
+}
+.div{
+  background-color: white;
+  width: 1100px;
+  margin-left:100px;
+  margin-right:50px;
+
+
+}
+#Head-div{
+  background-image: url("5.jpg");
+  width: auto;
+  height: auto;
+
+  border: 3px outset white;
+
+}
+*{
+   padding: 0;
+   margin: 0;
+}
+.cover {
+        display: grid;
+        height: 100%;
+    }
+    .center-fit {
+        max-width: 100%;
+        max-height: 100vh;
+        margin: auto;
+    }
+
+.container {
+   width: 100%;
+   margin: 0 auto;
+}
+
+
+
+.website_titel {
+   padding: 10px;
+   font-size: 35px;
+   color: black;
+   text-shadow: 3px 3px #131313;
+}
+
+
+.menu_navbar {
+ float:left;
+ width: 100%;
+ background-color: black;
+}
+
+
+
+
+.menu ul {
+   list-style: none;
+}
+
+.menu ul li {
+   list-style: none;
+  float: left;
+   position: relative;
+   padding-top: 30px;
+}
+
+.menu ul li a {
+   text-decoration: none;
+   display: block;
+   padding: 20px 20px;
+   color: white;
+   font-size: 15px;
+}
+
+.menu ul li a:hover {
+   color: white;
+}
+
+.menu ul li ul {
+   position: absolute;
+   left: -9999px;
+}
+
+.menu ul li:hover ul {
+   left: 0px;
+   z-index: 1;
+   color: white;
+}
+
+.menu ul li ul li {
+   width: 170px;
+   background: #21252B;
+
+}
+
+.menu ul li ul li a:hover {
+   color: #3B5999;
+}
+
+.Number {
+   color: #3B5999;
+}
+
+.active {
+   color: #3B5999;
+}
+
+.search_box {
+   margin-top: 17px;
+   border-radius: 3px;
+   padding: 5px;
+   margin-left: 60px;
+   background: #E8EAED;
+   border: none;
+}
+
+.sesrch_button {
+   border-radius: 3px;
+   border: none;
+   padding: 5px;
+   background: #365999;
+   color: #AAAAAA;
+
+}
+
+.sesrch_button:hover {
+   background: #e6e8eb;
+   color: black;
+}
+
+.banner {
+
+   text-align: center;
+   color: white;
+}
+
+.top-left {
+   position: absolute;
+   top: 20px;
+   left: 16px;
+   right: 20px;
+}
+
+.image {
+
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    border-radius: 8%;
+     Padding: 20px;
+     border: 1px;
+}
+#images{
+   text-align:center;
+   Padding: 20px;
+
+}
+
+#imagesmap{
+   text-align:center;
+   Padding: 20px;
+
+width: 100%;
+}

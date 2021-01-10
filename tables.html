@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Table</title>
+  <link rel="stylesheet" href="tables.css">
+  <link rel="stylesheet" href="style.css">
+  <div class="navbar" id="navbar">
+    <img id="logo" src="picture/football4u-transparent.png" ALIGN=”left” alt="tournment-logo" style="height:50px">
+    <a href="Home.html">Home</a>
+    <a href="registration.html">Registration</a>
+    <a href="Information.html">Information</a>
+    <a href="Sponsors.html">Sponsors</a>
+    <a href="About_us.html">About us</a>
+  </div>
+</head>
+
+<body>
+
+  <div style="margin:0px 15px 0px 15px;background:#c9c8c5">
+  <img id="img1" src="picture/banner logo.jpg" alt="bannerlogo">
+    <h1>TABLE & STANDING</h1>
+    <div calss="countdown" style="padding-left:45%;">
+      <div class="countdown" id="days"></div>
+      <div class="countdown" id="hrs"></div>
+      <div class="countdown" id="min"></div>
+      <div class="countdown" id="sec"></div>
+    </div>
+    <br>
+    <div class="table">
+      <p id="bEvent">The event haven't started yet</p>
+      <table id="group1">
+        <tr class="col">
+          <th>#</th>
+          <th>Group A</th>
+          <th>GP</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GD</th>
+          <th>PTS</th>
+        </tr>
+        <tr class="wpos">
+          <td>1</td>
+          <td>Sabertooth FC</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class="wpos">
+          <td>2</td>
+          <td>Lamia Scale</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class="wpos">
+          <td>3</td>
+          <td>Blue Pegasus</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class="wpos">
+          <td>4</td>
+          <td>Fairy Tail</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </table>
+
+      <table id="group2">
+        <tr class="col">
+          <th>#</th>
+          <th>Group B</th>
+          <th>GP</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GD</th>
+          <th>PTS</th>
+        </tr>
+        <tr class="wpos">
+          <td>1</td>
+          <td>Magia Dragon</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class="wpos">
+          <td>2</td>
+          <td>Raven Tail</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class="wpos">
+          <td>3</td>
+          <td>MermaidHeel</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr class="wpos">
+          <td>4</td>
+          <td>TitanNose FC</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </table>
+      <p id="aEvent">Top two team from each group will qualify to go to Semi-Final Match</p>
+      <main id="tournament">
+        <ul class="round semifinal">
+          <li class="spacer">&nbsp;</li>
+
+          <li class="game game-top">Winner Group A<span>0</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom ">RunnerUp Group B<span>0</span></li>
+
+          <li class="spacer">&nbsp;</li>
+
+          <li class="game game-top ">Winner Group B <span>0</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom">RunnerUp Group A<span>0</span></li>
+
+          <li class="spacer">&nbsp;</li>
+        </ul>
+        <ul class="round final">
+          <li class="spacer">&nbsp;</li>
+
+          <li class="game game-top">Winner Semifinal 1<span>0</span></li>
+          <li class="game game-spacer">&nbsp;</li>
+          <li class="game game-bottom ">Winner Semifinal 2<span>0</span></li>
+
+          <li class="spacer">&nbsp;</li>
+        </ul>
+      </main>
+
+
+    </div>
+    <br><br>
+
+  </div>
+
+</body>
+<script>
+  window.onscroll = function() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("navbar").style.padding = "10px 10px";
+    } else {
+      document.getElementById("navbar").style.padding = "15px 10px";
+    }
+  };
+
+  function showTable() {
+    document.getElementById('group1').style.visibility = "visible";
+    document.getElementById('group2').style.visibility = "visible";
+    document.getElementById('tournament').style.visibility = "visible";
+    document.getElementById('bEvent').style.visibility = "hidden";
+    document.getElementById('aEvent').style.visibility = "visible";
+  };
+
+  function hideTable() {
+    document.getElementById('group1').style.visibility = "hidden";
+    document.getElementById('group2').style.visibility = "hidden";
+    document.getElementById('tournament').style.visibility = "hidden";
+    document.getElementById('bEvent').style.visibility = "visible";
+    document.getElementById('aEvent').style.visibility = "hidden";
+  };
+
+  var countDownDate = new Date("Jan 1, 2021 15:52:00").getTime();
+  hideTable();
+
+  var x = setInterval(function() {
+
+
+    var now = new Date().getTime();
+
+
+    var distance = countDownDate - now;
+
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+    document.getElementById("days").innerHTML = days + "d ";
+    document.getElementById("hrs").innerHTML = hours + "h ";
+    document.getElementById("min").innerHTML = minutes + "m "
+    document.getElementById("sec").innerHTML = seconds + "s ";
+
+
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("days").style.visibility = "hidden";
+      document.getElementById("min").style.visibility = "hidden";
+      document.getElementById("hrs").style.visibility = "hidden";
+      document.getElementById("sec").style.visibility = "hidden";
+      /*      document.getElementById("countdown").innerHTML = "IIUM FOOTBALL CUP";*/
+      return showTable();
+    }
+  }, 1000);
+</script>
+<!-- Footer -->
+<footer style="width: 100%;padding: 20px; background-color: #21252B; color: #ffffff;">
+  <center>
+    <p>@Copyrights 2020, All rights reserved</p>
+  </center>
+</footer>
+</html>

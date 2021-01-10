@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style media="screen">
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+  .header-img {
+    width: 100%;
+    height: 250px;
+    background: url('picture/Construction-paperwork-organisation.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+  }
+  input {
+    width: 75%;
+  }
+</style>
+<head>
+  <link rel="shortcut icon" href="picture/football4u-transparent.ico" />
+  <div class="navbar" id="navbar">
+    <img id="logo" src="picture/football4u-transparent.png" ALIGN=”left” alt="tournment-logo" style="height:50px">
+    <a href="Home.html">Home</a>
+    <a href="registration.html">Registration</a>
+    <a href="Information.html">Information</a>
+    <a href="Sponsors.html">Sponsors</a>
+    <a href="About_us.html">About us</a>
+  </div>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <div class="header-img"></div>
+  <title>register a team</title>
+</head>
+
+<body>
+  <audio id="alert" src="alert\bell.mp3" preload="auto"></audio>
+  <div style="padding: 20px;background:#adadad;margin-right:140px;margin-left:140px">
+    <h1 style="text-align:center">Register a new team</h1>
+    Regestration rules:<br>
+    1-Fill up the form <br>
+    2-finish the payment 100RM *pleas pay before proceeding with registration*<br>
+       bank info:bank:XXXXXXX <br>
+       accountNumber:########<br>
+    3- ready for kick off <br><br>
+
+    <div style="font-size: 18px;display: grid;grid-template-columns:1fr 1fr; grid-gap: 20px; background:#21252B;color: white;padding:20px;">
+      <div style="display: grid;grid-template-columns:auto auto auto auto;">
+        <div style="width:100px;">
+          <label>Team Name</label><br><br>
+          <label>Team leader</label><br><br>
+          <label>coleader</label><br><br>
+          <label>team nationality</label>
+
+        </div>
+        <div style="width:300px">
+          <input type="text" id="team name" placeholder="enter the team name"><br><br>
+          <input type="text" id="leader" placeholder="---"><br><br>
+          <input type="text" id="coleader" placeholder="---"><br><br>
+          <input type="text" id="nationality" placeholder="what country are you presenting">
+        </div>
+
+      </div>
+      <div style="text-align:right; display: grid;grid-template-columns:auto auto auto auto; grid-gap: 0px;">
+
+        <div>
+          <label>Number of players</label><br><br>
+          <label>Home kit color</label><br><br>
+          <label>away kit color</label><br><br>
+          <label>contact Number</label>
+        </div>
+        <div>
+          <input type="number" min="8" max="11" id="number of players" placeholder="min of 8 and max of 11"><br><br>
+          <input type="text" id="home color" placeholder="---"><br><br>
+          <input type="text" id="away color" placeholder="---"><br><br>
+          <input type="tel" id="contact" placeholder="---">
+        </div>
+
+      </div>
+    </div>
+    <div style="background:#21252B;color;padding-bottom: 10px: white;display: flex;justify-content: center;align-items: center;">
+      <button type="button" style="width:150px" id="submit"> proceed to payment</button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var tms = JSON.parse(localStorage.getItem('teams')) ;
+    if (tms === null) {
+      tms = [];
+    }
+    const teamname = document.getElementById("team name");
+    const leader = document.getElementById("leader");
+    const coleader = document.getElementById("coleader");
+    const nationality = document.getElementById("nationality");
+    const number = document.getElementById("number of players");
+    const home = document.getElementById("home color");
+    const away = document.getElementById("away color");
+    const contact = document.getElementById("contact");
+    const sub = document.getElementById("submit");
+    const bell = document.getElementById("alert");
+    number.onchange = function() {
+      if (number.value > 11) {
+        bell.play();
+        number.value = 11;
+        alert("the maximum number of players is 11");
+      } else if (number.value < 8) {
+        bell.play();
+        number.value = 8;
+        alert("the minimum number of players is 8");
+      }
+    };
+    sub.onclick = function() {
+      var bool = 1;
+      if (teamname.value === '') {
+        bell.play();
+        bool = 0;
+        alert("team name can't be empty");
+      } else if (leader.value === '') {
+        bell.play();
+        bool = 0;
+        alert("The Leader Name can't be empty");
+      } else if (coleader.value === '') {
+        bell.play();
+        bool = 0;
+        alert("The Coleader Name can't be empty");
+      } else if (home.value == '' || away.value === '') {
+        bell.play();
+        bool = 0;
+        alert("You must fill in the kit colors");
+      } else if (home.value === away.value) {
+        bell.play();
+        bool = 0;
+        alert("Home & Away kits can't have the same color");
+      } else if (number.value === '') {
+        bell.play();
+        bool = 0;
+        alert("please fill in the number of players")
+      } else{
+        for (i in tms) {
+          if (teamname.value === tms[i].teamname) {
+            bell.play();
+            bool = 0;
+            alert("this team name is already taken");
+          }
+        }
+      }
+      if (Boolean(bool)) {
+        tms.push({
+          "teamname": teamname.value,
+          "leader": leader.value,
+          "coleader": coleader.value,
+          "nationality": nationality.value,
+          "number": number.value,
+          "home": home.value,
+          "away": away.value,
+          "contact": contact.value
+        });
+        localStorage.setItem('teams', JSON.stringify(tms));
+        window.location ="payment.html#";
+      }
+    };
+    window.onscroll = function() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("navbar").style.padding = "10px 10px";
+      } else {
+        document.getElementById("navbar").style.padding = "15px 10px";
+      }
+    };
+  </script>
+  <footer style="padding: 10px; background-color: #000000; color: #ffffff;">
+    <center>
+      <p>@Copyrights 2020, All rights reserved</p>
+    </center>
+  </footer>
+</body>
+</html>
